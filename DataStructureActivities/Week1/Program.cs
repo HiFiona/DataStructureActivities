@@ -7,6 +7,9 @@ namespace Week1
         static void Main(string[] args)
         {
             Console.WriteLine("Week 1 activity!");
+            int enteredNumber = int.Parse(Console.ReadLine());
+            int number = Digits.AddDigits(enteredNumber);
+            Console.WriteLine($"Result: {number}");
         }
     }
 
@@ -19,48 +22,31 @@ namespace Week1
         /// <returns></returns>
         public static int AddDigits(int n)
         {
-            // todo: do your magic here! :)
- {
-        static void Main(string[] args)
-           {
-            int n = 29, remainder, sum = 0;
-            int n1 = 123, remainder1, sum1 = 0;
-            int n2 = 527, remainder2, sum2 = 0;
-            int n3 = 123456, remainder3, sum3 = 0;
+          
+            var digits = n.ToString().ToCharArray();
 
-            while( n > 0)
-            while( n1 > 0)
-            while( n2 > 0)
-            while( n3 > 0)
+            int sum = 0;
+
+            for (int i = 0; i < digits.Length; i++)
             {
-                remainder = n % 10;
-                remainder1 = n1 % 10;
-                remainder2 = n2 % 10;
-                remainder3 = n3 % 10;
+                // 123 = 6  /// digits [1][2][3]
+                // indices:             0  1  2
+                sum = sum + int.Parse(digits[i].ToString());
+            }       
 
-                sum = sum + remainder;
-                sum1 = sum1 + remainder1;
-                sum2 = sum2 + remainder2;
-                sum3 = sum3 + remainder3;
-
-                n = n / 10;
-                n1 = n1 / 10;
-                n2 = n2 / 10;
-                n3 = n3 / 10;
-            }
-            Console.WriteLine("AddDigits(n) is {0}", sum);
-            Console.WriteLine("AddDigits(n) is {0}", sum1);
-            Console.WriteLine("AddDigits(n) is {0}", sum2);
-            Console.WriteLine("AddDigits(n) is {0}", sum3);
-        }
-            return 0;
+            return sum;
         }
 
         public static int LargestNumber(int n)
-        {
-            // todo: do your magic here! :)
+        {  
+            /*var num = Math.Pow(10, n) - 1;
+            return (int)num;*/
 
-            return 0;
+            string highnumber = "";
+            for (int i = 0; i < n; i++)
+                highnumber += "9";
+            
+            return int.Parse(highnumber);
         }
 
         public static int OptimalEqualSplit(int n, int m)
@@ -78,3 +64,5 @@ namespace Week1
         }
     }
 }
+
+
