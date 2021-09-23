@@ -6,6 +6,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+
 public class BasicStatisticsTest
 {
 
@@ -34,7 +35,7 @@ public class BasicStatisticsTest
 
     @ParameterizedTest
     @MethodSource("GetMeanParameterProvider")
-    public void TestGetSum(int[] n, double expected)
+    public void TestGetMean(int[] n, double expected)
     {
         double actual = BasicStatistics.GetMean(n);
         assertEquals(expected, actual);
@@ -51,7 +52,7 @@ public class BasicStatisticsTest
     @MethodSource("GetMedianParameterProvider")
     public void TestGetMedian(int[] n, int expected)
     {
-        int actual = BasicStatistics.GetMedian(n);
+        double actual = BasicStatistics.GetMedian(n);
         assertEquals(expected, actual);
     }
 
