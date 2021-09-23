@@ -1,19 +1,23 @@
-import org.junit.platform.console.shadow.picocli.CommandLine.MaxValuesExceededException;
+
 
 public class BasicStatistics
 {
+
     public static int GetSum(int[] n)
     {
         // todo: do your magic here! :)
-    	
-    	for (int i=0;i<n.length;i++) {
-    		
-    	System.out.println(n[i]);
+       
+        int sum = 0;
+        for (int i =0 ;i < n.length; i++) {
+            sum += n[i];
 
        
          }
-         return 0;
-    }
+        return sum;
+        }
+        
+
+
 
     public static double GetMean(int[] n)
     {
